@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <title>Wordle PPY</title>
+ 		<link rel="stylesheet" href="slyle.css">
+     <script src="script.js" defer></script>
+   </head>
+   <body>
+     <h1>Wordle PPY</h1>
+     <input type="text" id="guess-input" pattern="[a-zA-Z]+" maxlength="5" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) ? true : false;" placeholder="Ingrese una palabra" name="Ingrese una palabra">
+     <button id="guess-button">Intentar</button>
+     <div id="grid">
+      <article id="cuadro">
+
+      </article>
+     </div>
+     
+     <p id="guesses">
+      <div>
+        <p>
+          Wordle es un juego en línea de adivinanzas en el que el jugador 
+          debe adivinar una palabra de cinco letras en un número limitado 
+          de intentos. El juego proporciona pistas en forma de letras 
+          correctas o incorrectas para ayudar al jugador a adivinar la 
+          palabra correcta. El jugador debe adivinar la palabra correcta 
+          con el menor número de intentos posible. Es un juego simple pero 
+          adictivo que se ha vuelto muy popular en línea.
+        </p>
+       </div>
+   </body>
+ </html>
