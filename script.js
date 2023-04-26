@@ -1,7 +1,12 @@
 const BOTON= document.getElementById("guess-button")
+const CONTENEDOR = document.getElementById("guesses")
 let intentos = 6;
 let palabra = "APPLE"
-BOTON.addEventListener('click', intentar)
+let palabrass = ["APPLE", "HOUSE", "MOUSE", "MUSIC", "PHONE", "TABLE", "LIMON0", "PIZZA", "IMAGE", "SMILE", "TIGER", "HAPPY", "MONEY", "PLANT", "ROBOT"]
+BOTON.addEventListener('click', intentar)///////
+palabra = palabrass[Math.floor(Math.random()*palabrass.length)];
+console.log(palabra);
+
 function leerIntento() {
     let intento = document.getElementById('guess-input').value
     return intento.toUpperCase()
@@ -9,6 +14,11 @@ function leerIntento() {
 
 function intentar(){
     const INTENTO = leerIntento();
+    CONTENEDOR.innerHTML = ""
+    if (INTENTO.length < 5) {
+        sinDatos("<h3>INGRESE PALABRA</h3>")
+        return
+    }
    
 
     const GRID = document.getElementById("cuadro");
@@ -29,25 +39,29 @@ function intentar(){
         }
         GRID.appendChild(ROW);
         intentos--;
-        console.log(intentos)
         if (INTENTO === palabra){
-            let contenedor = document.getElementById("guesses")
-            contenedor.innerHTML = '<h1>Ganaste</h1>'
-            terminar('<h1>Ganaste</h1>')
+
+            CONTENEDOR.innerHTML = '<h1>🎉Ganaste🥳</h1>'
+            terminar('<h1>🎉Ganaste🥳</h1>')
             return
         }
         if(intentos === 0){
-            terminar("<h1>PERDISTE!</h1>")
-        }
+            terminar("<h1>PERDISTE!😔</h1>")
+        } 
     }
     
+function sinDatos(mensaje){
+    CONTENEDOR.innerHTML = mensaje
+}
+
     function terminar(mensaje){
         const INPUT = document.getElementById("guess-input")
         INPUT.disabled = true;
         BOTON.disabled = true;
-        let contenedor = document.getElementById("guesses")
-        contenedor.innerHTML = mensaje
+        CONTENEDOR.innerHTML = mensaje
         setTimeout(function() {
             location.reload();
         }, 2000);
     }
+
+    

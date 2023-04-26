@@ -19,6 +19,8 @@ body {
   }
      
   #guess-button {
+      display: block;
+      margin: 0 auto 20px;
       margin-top: 15px;
       font-size: 15px;
       font-weight: bold;
@@ -56,4 +58,14 @@ body {
      
   .input-area{
       margin: 30px;
+  }
+  #cuadro{
+    display: block;
+    align-items: center;
+    text-align-last: center;
+  }
+  .ejemp{
+display: block;
+margin: 0 auto;
+
   }
